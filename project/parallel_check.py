@@ -26,7 +26,6 @@ treduce = minitorch.fast_ops.tensor_reduce(njit()(minitorch.operators.add))
 treduce(*out.tuple(), *a.tuple(), 0)
 print(treduce.parallel_diagnostics(level=3))
 
-
 # MM
 print("MATRIX MULTIPLY")
 out, a, b = (

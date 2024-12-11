@@ -2,11 +2,8 @@
 Be sure you have minitorch installed in you Virtual Env.
 >>> pip install -Ue .
 """
-
 import random
-
 import minitorch
-
 
 class Network(minitorch.Module):
     def __init__(self):
@@ -16,7 +13,6 @@ class Network(minitorch.Module):
     def forward(self, x):
         y = self.linear(x)
         return minitorch.operators.sigmoid(y[0])
-
 
 class Linear(minitorch.Module):
     def __init__(self, in_size, out_size):
@@ -40,7 +36,6 @@ class Linear(minitorch.Module):
             for j in range(len(y)):
                 y[j] = y[j] + x * self.weights[i][j].value
         return y
-
 
 class ManualTrain:
     def __init__(self, hidden_layers):
